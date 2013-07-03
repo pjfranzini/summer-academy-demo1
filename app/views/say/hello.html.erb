@@ -1,9 +1,14 @@
 <h1>This is my new hello page</h1>
 <p>It is now <%= @time %> (local Ottawa time).</p>
 <p>Also known as <%= @niceDay %>.</p>
-<p>In London it is <%= @timeLondonNice %>.</p>
+<p>
+	<% @timeA.each do |key,value|%> 
+	<%= "In #{key} it is #{value}" %> </br>
+    <% end %> 
+</p> 
+<!-- <p>In London it is <%= @timeLondonNice %>.</p>
 <p>In Paris and Rome it is <%= @timeParisNice %>.</p>
-<p>In Beijing it is <%= @timeBeijingNice %>.</p>
+<p>In Beijing it is <%= @timeBeijingNice %>.</p> -->
 <p>This month (<%= @month %>) has <%= @daysmonth %> days.</p>
 <p>Currently <%= @secsSince %> seconds since midnight,
 and <%= @secsLeft %> seconds till the end of the day (23:59:59)</p> 
