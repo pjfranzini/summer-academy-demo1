@@ -1,4 +1,10 @@
-<h1>This is my new goodbye page</h1>
-
+<h1>More time facts</h1>
+<p>This month (<%= @month %>) has <%= @daysmonth %> days.</p>
+<p>Currently it is <%= @secsSince %> seconds -- or 
+	<%= @minsSince %> minutes --
+	since midnight,
+and <%= @secsLeft %> seconds  -- or 
+	<%= @minsLeft %> minutes --
+till the end of the day (23:59:59)</p> 
 <p>Back to
-<%= link_to "Hello", say_hello_path %>? </p>
+<%= link_to "Timezones", say_hello_path %> </p>
