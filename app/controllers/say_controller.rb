@@ -11,16 +11,10 @@ class SayController < ApplicationController
 
     @timeA = Hash.new
     zoneA.each {|zone| @timeA[zone] = Time.now.in_time_zone(zone).strftime('%I:%M %p')}
-    # @timeParis = Time.now.in_time_zone(zoneA[0])
-    # @timeParisNice = @timeParis.strftime('%I:%M %p')
-    # @timeLondon = Time.now.in_time_zone("London")
-    # @timeLondonNice = @timeLondon.strftime('%I:%M %p')
-    # @timeBeijing = Time.now.in_time_zone("Beijing")
-    # @timeBeijingNice = @timeBeijing.strftime('%I:%M %p')
 
   	@date = Date.today
 
-  	@niceDay = @date.strftime('%B %d, %Y')
+  	@niceDay = @date.strftime('%A, %B %d, %Y')
   end
 
   def goodbye
@@ -32,6 +26,8 @@ class SayController < ApplicationController
     @minsSince = (@secsSince/60).round(0)
     @secsLeft = @time.seconds_until_end_of_day()
     @minsLeft = (@secsLeft/60).round(0)
+    @whatDay = @date.strftime('%j')
+    @daysLeft = 365-@whatDay.to_i
   end
 end
  
